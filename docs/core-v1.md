@@ -1,65 +1,167 @@
-# Mayeutic Core v1
+# Mayeutic Core v1 — Operational Definition
 
-Mayeutic Core is the central decision system that governs all Mayeutic products.
+## Purpose
 
-It is not an app.
-It is not an interface.
-It is not a chatbot.
-It is not an improvisational AI.
+Mayeutic Core exists to reduce cognitive, organizational, and social friction by making precise decisions about **when to intervene, how to intervene, and when not to intervene** in complex human systems.
 
-It is a criteria engine that observes complex human contexts, evaluates states, consults decision tables, and recommends actions with the goal of reducing cognitive, organizational, and social friction.
+Its goal is not to help more, but to **intervene better**.
 
-## What it does
+---
 
-- Decides whether to intervene or not
-- Decides when to intervene
-- Defines the level of intervention
-- Prioritizes
-- Groups
-- Escalates
-- Closes cycles
-- Manages memory
-- Requests human validation when ambiguity exists
+## Scope
 
-## What it does NOT do
+Mayeutic Core governs all products under the Mayeutic ecosystem.
 
-- Does not execute final actions
-- Does not make irreversible decisions
-- Does not give opinions
-- Does not judge
-- Does not replace humans or institutions
+It operates as a **central decision engine** that:
+- evaluates context
+- determines system state
+- consults decision tables
+- outputs a recommended action
 
-## Guiding principle
+Products (e.g., Basyco, Nukleo) do not decide.  
+They **query the Core** and execute or display its decisions.
+
+---
+
+## What the Core Decides
+
+Mayeutic Core decides:
+
+- whether to intervene or remain silent
+- the appropriate level of intervention
+- priority ordering
+- grouping vs separation of signals
+- escalation vs containment
+- cycle closure
+- memory persistence rules
+- when to request human validation
+
+All decisions are **reversible recommendations**, never irreversible actions.
+
+---
+
+## What the Core Does NOT Decide
+
+Mayeutic Core does NOT:
+
+- execute final actions
+- enforce outcomes
+- replace human or institutional authority
+- improvise behavior
+- learn rules autonomously
+- optimize for engagement or attention
+
+The Core is a **regulatory system**, not an autonomous agent.
+
+---
+
+## Universal States
+
+The Core operates over a finite set of universal states:
+
+- Latent
+- Active
+- Loaded
+- Saturated
+- Critical
+- Resolved
+- Archived
+
+States represent **system conditions**, not user emotions.
+
+---
+
+## Allowed Actions
+
+The Core may output only the following actions:
+
+- Do not intervene
+- Wait
+- Suggest
+- Alert
+- Request human validation
+- Group
+- Separate
+- Escalate
+- Contain
+- Close
+- Archive
+
+No other actions are permitted.
+
+---
+
+## Decision Versioning
+
+This document defines **Decision Version v1 (B.0)**.
+
+Rules defined here:
+- are executable
+- are auditable
+- are versioned
+- must not be modified silently
+
+Any change requires a new version (v2).
+
+---
+
+## Relationship to Decision Tables
+
+This document defines **what the system is allowed to decide**.
+
+All concrete decision logic is implemented exclusively in:
+- `docs/decision-tables-v1.md`
+
+If a rule does not exist in the decision tables, it **does not exist** for the Core.
+
+---
+
+## Relationship to AI
+
+AI components may be used only to:
+- summarize information
+- generate explanations
+- formulate questions
+- transform text
+
+AI components must **never decide**.
+
+---
+
+## Relationship to Interfaces
+
+Interfaces:
+- capture input
+- display output
+- collect validation
+
+Interfaces must not:
+- infer priorities
+- change decisions
+- override Core logic
+
+---
+
+## Configurations
+
+The Core supports multiple configurations without changing its logic:
+
+- Basyco (individual context)
+- Nukleo (collective / institutional context)
+
+Configurations adapt **inputs and interpretation**, not decision rules.
+
+---
+
+## Governing Principle
 
 If the AI decides, it is wrong.  
 If the UI decides, it is worse.  
-If the Core decides, everything flows.
+If the Core decides, the system remains coherent.
 
-## Structure
+---
 
-- The Core lives in rules and decision tables
-- Products (Basyco, Nukleo) are configurations of the Core
-- AI acts as an executor, not as the brain
-- Interfaces only capture input and display output
+## Final Rule
 
-## Documentation
-
-- docs/core-v1.md → full system definition
-- docs/decision-tables-v1.md → executable decision rules v1
-
-This repository defines the operational truth of the system.  
-All design, code, and AI behavior must derive from this source.
-
-## Source documents (system truth)
-
-This repository is governed exclusively by the following documents:
-
-- docs/core-v1.md  
-  Defines the purpose, scope, foundational decisions, states, and allowed actions of Mayeutic Core v1.
-
-- docs/decision-tables-v1.md  
-  Contains the executable Decision Tables (Core, Basyco, Nukleo).  
-  These tables govern system behavior and are the only source of decision logic.
-
-Rule:  
-If something is not defined in these documents, it does not exist for the system.
+If something is not explicitly defined in this document or in the Decision Tables,  
+**it does not exist for the system**.
