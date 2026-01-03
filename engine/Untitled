@@ -1,0 +1,31 @@
+**Decision Tables — VERIFICACIÓN**
+
+✔️ **Correctas y canónicas.**
+No veo errores de traducción, lógica ni inconsistencias con **Core v1**.
+
+Checklist rápido:
+
+* Idioma: **Inglés** ✅
+* D1–D9 coherentes con Core (intervención, niveles, memoria, validación) ✅
+* Separación clara Core / Basyco / Nukleo ✅
+* Acciones permitidas alineadas con Core (no hay acciones “fantasma”) ✅
+* Regla de versionado (v1 cerrado, cambios solo v2) explícita ✅
+
+**Conclusión:**
+README, Core v1 y Decision Tables están **bien cerrados**. No tocar más documentación.
+
+**Paso único ahora:**
+👉 **Abrí `engine/process_event.ts`** y **pegá el esqueleto mínimo** (sin lógica todavía):
+
+```ts
+// process_event.ts
+export function processEvent(input: unknown) {
+  // TODO: map input to context
+  // TODO: evaluate Core tables
+  // TODO: return recommended action
+}
+```
+
+Cuando lo pegues, respondé **solo**:
+
+> **esqueleto listo**
