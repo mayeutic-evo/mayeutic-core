@@ -1,0 +1,9 @@
+{
+    "name": "mayeutic-core",
+    "version": "0.1.0",
+    "type": "module",
+    "exports": {
+      ".": "./engine/process_event.ts"
+    }
+  }
+  
