@@ -1,66 +1,65 @@
 # Mayeutic Core v1
 
-Mayeutic Core es el sistema central de decisión que gobierna todos los productos de Mayeutic.
+Mayeutic Core is the central decision system that governs all Mayeutic products.
 
-No es una app.
-No es una interfaz.
-No es un chatbot.
-No es una IA que improvisa.
+It is not an app.
+It is not an interface.
+It is not a chatbot.
+It is not an improvisational AI.
 
-Es un motor de criterio que observa contextos humanos complejos, evalúa estados, consulta tablas de decisión y recomienda acciones con el objetivo de reducir fricción cognitiva, organizacional y social.
+It is a criteria engine that observes complex human contexts, evaluates states, consults decision tables, and recommends actions with the goal of reducing cognitive, organizational, and social friction.
 
-## Qué hace
+## What it does
 
-- Decide si intervenir o no
-- Decide cuándo intervenir
-- Define nivel de intervención
-- Prioriza
-- Agrupa
-- Escala
-- Cierra ciclos
-- Gestiona memoria
-- Pide validación humana cuando hay ambigüedad
+- Decides whether to intervene or not
+- Decides when to intervene
+- Defines the level of intervention
+- Prioritizes
+- Groups
+- Escalates
+- Closes cycles
+- Manages memory
+- Requests human validation when ambiguity exists
 
-## Qué NO hace
+## What it does NOT do
 
-- No ejecuta acciones finales
-- No toma decisiones irreversibles
-- No opina
-- No juzga
-- No reemplaza humanos ni instituciones
+- Does not execute final actions
+- Does not make irreversible decisions
+- Does not give opinions
+- Does not judge
+- Does not replace humans or institutions
 
-## Principio rector
+## Guiding principle
 
-Si la IA decide, está mal.  
-Si la UI decide, está peor.  
-Si el Core decide, todo fluye.
+If the AI decides, it is wrong.  
+If the UI decides, it is worse.  
+If the Core decides, everything flows.
 
-## Estructura
+## Structure
 
-- El Core vive en reglas y decision tables
-- Los productos (Basyco, Nukleo) son configuraciones del Core
-- La IA es ejecutora, no cerebro
-- Las interfaces solo capturan y muestran
+- The Core lives in rules and decision tables
+- Products (Basyco, Nukleo) are configurations of the Core
+- AI acts as an executor, not as the brain
+- Interfaces only capture input and display output
 
-## Documentación
+## Documentation
 
-- docs/core-v1.md → definición completa del sistema
-- docs/decision-tables-v1.md → reglas ejecutables v1
+- docs/core-v1.md → full system definition
+- docs/decision-tables-v1.md → executable decision rules v1
 
-Este repositorio define la verdad operativa del sistema.
-Todo diseño, código o IA debe colgar de acá.
+This repository defines the operational truth of the system.  
+All design, code, and AI behavior must derive from this source.
 
-## Documentos fuente (verdad del sistema)
+## Source documents (system truth)
 
-Este repositorio se rige exclusivamente por los siguientes documentos:
+This repository is governed exclusively by the following documents:
 
 - docs/core-v1.md  
-  Define el propósito, alcance, decisiones fundacionales, estados y acciones permitidas del Mayeutic Core v1.
+  Defines the purpose, scope, foundational decisions, states, and allowed actions of Mayeutic Core v1.
 
 - docs/decision-tables-v1.md  
-  Contiene las Decision Tables ejecutables (Core, Basyco y Nukleo).  
-  Estas tablas gobiernan el comportamiento del sistema y son la única fuente de decisión.
+  Contains the executable Decision Tables (Core, Basyco, Nukleo).  
+  These tables govern system behavior and are the only source of decision logic.
 
-Regla:
-Si algo no está definido en estos documentos, no existe para el sistema.
-
+Rule:  
+If something is not defined in these documents, it does not exist for the system.
