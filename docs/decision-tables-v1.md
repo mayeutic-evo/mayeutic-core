@@ -1,151 +1,207 @@
-DECISION TABLES v1
+DECISION TABLES v1  
 Mayeutic Core
-________________________________________
-🧠 TABLA CORE 1 — Intervenir o no (D1)
-Repetición	Carga percibida	Impacto	Contexto	Decisión
-baja	baja	bajo	estable	no intervenir
-media	baja	medio	estable	esperar
-media	media	medio	estable	intervenir
-alta	media	alto	estable	intervenir
-alta	alta	alto	inestable	intervenir
-baja	alta	bajo	inestable	esperar
-________________________________________
-🧠 TABLA CORE 2 — Nivel de intervención (D2)
-Estado	Ruido	Ambigüedad	Nivel
-claro	bajo	baja	mínima
-activo	medio	baja	media
-cargado	alto	media	mínima
-saturado	alto	alta	pedir validación
-crítico	medio	baja	alta
-Regla fija:
-Más ruido ≠ más intervención.
-________________________________________
-🧠 TABLA CORE 3 — Prioridad (D3)
-Urgencia	Impacto	Repetición	Prioridad
-alta	alta	alta	inmediato
-alta	media	media	próximo
-media	media	baja	postergable
-baja	baja	baja	descartable
-________________________________________
-🧠 TABLA CORE 4 — Agrupar vs Separar (D4)
-Similitud	Distancia temporal	Fuente	Acción
-alta	cercana	múltiple	agrupar
-alta	lejana	múltiple	agrupar
-baja	cercana	única	separar
-baja	lejana	única	ignorar
-________________________________________
-🧠 TABLA CORE 5 — Escalar o Contener (D5)
-Impacto	Afectados	Persistencia	Acción
-bajo	individual	baja	contener
-medio	individual	media	observar
-medio	colectivo	alta	escalar
-alto	colectivo	alta	escalar
-alto	institucional	media	escalar
-________________________________________
-🧠 TABLA CORE 6 — Cierre de ciclo (D6)
-Estado	Actividad reciente	Impacto	Acción
-activo	sí	medio	mantener
-activo	no	bajo	cerrar
-crítico	no	bajo	cerrar
-resuelto	no	bajo	archivar
-________________________________________
-🧠 TABLA CORE 7 — Validación humana (D7)
-Ambigüedad	Riesgo	Confianza	Acción
-baja	bajo	alta	ejecutar
-media	medio	media	sugerir
-alta	alta	baja	pedir validación
-________________________________________
-🧠 TABLA CORE 8 — Memoria (D8)
-Frecuencia	Predictibilidad	Sensibilidad	Acción
-alta	alta	baja	guardar automático
-media	media	baja	resumir
-baja	baja	media	pedir confirmación
-baja	baja	alta	no guardar
-________________________________________
-🧠 TABLA CORE 9 — Dominios activos (D9)
-Dominio	Responsabilidad declarada	Acción
-hijos	sí	habilitar
-hijos	no	ocultar
-animales	sí	habilitar
-animales	no	ocultar
-vehículo	sí	habilitar
-vehículo	no	ocultar
-________________________________________
-DECISION TABLES — BASYCO v1
-________________________________________
-🧍 TABLA B1 — Estado personal
-Responsabilidades	Postergaciones	Ritmo	Estado
-pocas	bajas	estable	claro
-medias	medias	estable	cargado
-muchas	altas	inestable	saturado
-muchas	altas	crítico	desbordado
-________________________________________
-🧍 TABLA B2 — Intervención Basyco
-Estado	Acción
-claro	mostrar resumen
-cargado	sugerir prioridad
-saturado	reducir input
-desbordado	alerta + validación
-________________________________________
-🧍 TABLA B3 — Automatización
-Tipo	Repetición	Acción
-mantenimiento	anual	automatizar
-salud	periódica	automatizar
-financiero	mensual	automatizar
-sensible	irregular	confirmar
-________________________________________
-🧍 TABLA B4 — Resumen diario
-Actividad	Estado	Acción
-completadas	sí	reforzar
-pendientes	pocas	reordenar
-pendientes	muchas	reducir
-ninguna	—	no intervenir
-________________________________________
-DECISION TABLES — NUKLEO v1
-________________________________________
-🏘️ TABLA N1 — Estado de problemática
-Reportes	Intenciones	Persistencia	Estado
-pocos	bajos	baja	latente
-medios	medios	media	visible
-altos	altos	media	sensible
-altos	muy altos	alta	crítico
-________________________________________
-🏘️ TABLA N2 — Visibilidad
-Estado	Acción
-latente	baja visibilidad
-visible	visibilidad media
-sensible	visibilidad alta
-crítico	máxima visibilidad
-________________________________________
-🏘️ TABLA N3 — Debate
-Intenciones	Diversidad	Acción
-bajas	baja	no abrir
-medias	media	abrir
-altas	alta	abrir
-muy altas	alta	escalar
-________________________________________
-🏘️ TABLA N4 — Escalamiento institucional
-Estado	Evidencia	Acción
-sensible	baja	esperar
-crítico	media	escalar
-crítico	alta	escalar
-________________________________________
-🏘️ TABLA N5 — Archivo
-Resolución	Actividad	Acción
-lograda	baja	archivar
-parcial	baja	archivar
-no lograda	alta	mantener
-________________________________________
-🔒 ESTADO FINAL
-Estas Decision Tables v1 son:
-•	coherentes con el Core
-•	ejecutables
-•	auditables
-•	versionables
-•	suficientes para un MVP real
-Desde ahora:
-•	no se discuten
-•	se implementan
-•	se ajustan solo como v2
-________________________________________
+========================================
 
+🧠 CORE TABLE 1 — Intervene or Not (D1)
+
+Repetition | Perceived Load | Impact | Context | Decision
+low | low | low | stable | do not intervene
+medium | low | medium | stable | wait
+medium | medium | medium | stable | intervene
+high | medium | high | stable | intervene
+high | high | high | unstable | intervene
+low | high | low | unstable | wait
+
+----------------------------------------
+
+🧠 CORE TABLE 2 — Level of Intervention (D2)
+
+State | Noise | Ambiguity | Level
+clear | low | low | minimal
+active | medium | low | medium
+loaded | high | medium | minimal
+saturated | high | high | request validation
+critical | medium | low | high
+
+Fixed rule:  
+More noise ≠ more intervention.
+
+----------------------------------------
+
+🧠 CORE TABLE 3 — Priority (D3)
+
+Urgency | Impact | Repetition | Priority
+high | high | high | immediate
+high | medium | medium | next
+medium | medium | low | deferrable
+low | low | low | discardable
+
+----------------------------------------
+
+🧠 CORE TABLE 4 — Group vs Separate (D4)
+
+Similarity | Temporal Distance | Source | Action
+high | near | multiple | group
+high | far | multiple | group
+low | near | single | separate
+low | far | single | ignore
+
+----------------------------------------
+
+🧠 CORE TABLE 5 — Escalate or Contain (D5)
+
+Impact | Affected | Persistence | Action
+low | individual | low | contain
+medium | individual | medium | observe
+medium | collective | high | escalate
+high | collective | high | escalate
+high | institutional | medium | escalate
+
+----------------------------------------
+
+🧠 CORE TABLE 6 — Cycle Closure (D6)
+
+State | Recent Activity | Impact | Action
+active | yes | medium | maintain
+active | no | low | close
+critical | no | low | close
+resolved | no | low | archive
+
+----------------------------------------
+
+🧠 CORE TABLE 7 — Human Validation (D7)
+
+Ambiguity | Risk | Confidence | Action
+low | low | high | execute
+medium | medium | medium | suggest
+high | high | low | request validation
+
+----------------------------------------
+
+🧠 CORE TABLE 8 — Memory (D8)
+
+Frequency | Predictability | Sensitivity | Action
+high | high | low | auto-save
+medium | medium | low | summarize
+low | low | medium | request confirmation
+low | low | high | do not save
+
+----------------------------------------
+
+🧠 CORE TABLE 9 — Active Domains (D9)
+
+Domain | Declared Responsibility | Action
+children | yes | enable
+children | no | hide
+animals | yes | enable
+animals | no | hide
+vehicle | yes | enable
+vehicle | no | hide
+
+========================================
+DECISION TABLES — BASYCO v1
+========================================
+
+🧍 TABLE B1 — Personal State
+
+Responsibilities | Postponements | Rhythm | State
+few | low | stable | clear
+medium | medium | stable | loaded
+many | high | unstable | saturated
+many | high | critical | overwhelmed
+
+----------------------------------------
+
+🧍 TABLE B2 — Basyco Intervention
+
+State | Action
+clear | show summary
+loaded | suggest priority
+saturated | reduce input
+overwhelmed | alert + validation
+
+----------------------------------------
+
+🧍 TABLE B3 — Automation
+
+Type | Repetition | Action
+maintenance | yearly | automate
+health | periodic | automate
+financial | monthly | automate
+sensitive | irregular | confirm
+
+----------------------------------------
+
+🧍 TABLE B4 — Daily Summary
+
+Activity | State | Action
+completed | yes | reinforce
+pending | few | reorder
+pending | many | reduce
+none | — | do not intervene
+
+========================================
+DECISION TABLES — NUKLEO v1
+========================================
+
+🏘️ TABLE N1 — Issue State
+
+Reports | Intentions | Persistence | State
+few | low | low | latent
+medium | medium | medium | visible
+high | high | medium | sensitive
+high | very high | high | critical
+
+----------------------------------------
+
+🏘️ TABLE N2 — Visibility
+
+State | Action
+latent | low visibility
+visible | medium visibility
+sensitive | high visibility
+critical | maximum visibility
+
+----------------------------------------
+
+🏘️ TABLE N3 — Debate
+
+Intentions | Diversity | Action
+low | low | do not open
+medium | medium | open
+high | high | open
+very high | high | escalate
+
+----------------------------------------
+
+🏘️ TABLE N4 — Institutional Escalation
+
+State | Evidence | Action
+sensitive | low | wait
+critical | medium | escalate
+critical | high | escalate
+
+----------------------------------------
+
+🏘️ TABLE N5 — Archive
+
+Resolution | Activity | Action
+achieved | low | archive
+partial | low | archive
+not achieved | high | keep
+
+========================================
+
+🔒 FINAL STATE
+
+These Decision Tables v1 are:
+- consistent with the Core
+- executable
+- auditable
+- versionable
+- sufficient for a real MVP
+
+From now on:
+- they are not debated
+- they are implemented
+- they are only adjusted as v2
